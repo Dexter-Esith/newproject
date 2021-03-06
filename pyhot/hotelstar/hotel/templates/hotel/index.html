@@ -30,19 +30,21 @@
             {% for hotel in good_hotels %}
          <div class="col-lg-4">
                 <div class="tm-bg-white-transparent tm-feature-box">
-                    <div class="flex-1">
-                            <h3 class="tm-feature-name">{{ hotel.name }}</h3>
-                        <br>
-                            <div>
-                            <img class="tm-feature-icon-container" src="{{ hotel.picture.url }}" alt="tinki"></div>
-                    </div>
+                  <div class="flex-1">
+                    <h3 class="tm-feature-name">{{ hotel.name }}</h3>
+                    <p>
+                      <b>Price per day: <u>{{ hotel.price }}$</u></b>
+                    </p>
+                  <div>
+                    <img class="tm-feature-icon-container" src="{{ hotel.picture.url }}" alt="tinki"></div>
+                </div>
              <div class="flex-2">
                     <h5><b>Hotel Description</b></h5>
                 <p class="text-center">{{ hotel.description }}</p>
                     {{ hotel.star }}
-                 <form>
-                     <input class="see-more" type="button" value="See More">
-                 </form>
+                 <a href="seemore.html">
+                    <button class="see-more">See More</button>
+                 </a>
          </div>
         </div>
           </div>
