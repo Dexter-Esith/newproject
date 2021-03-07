@@ -57,6 +57,7 @@ small {
 
 .tm-bg-white-transparent {
   background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
 }
 
 .tm-brand-row {
@@ -82,15 +83,17 @@ width: 100%;
 align-items: center;
 }
 .see-more {
+outline: none;
+border: none;
 background-color: black;
 color: #fff;
 width: 120px;
 height: 40px;
-border: none;
 margin-top:20px;
 transition:0.6s;
 border-radius: 5px;
 }
+
 .title {
 max-width: 1260px;
 display:flex;
@@ -104,6 +107,7 @@ width:320px;
 height: 100px;
 background-color: rgba(34,34,34,0.25);
 color:white;
+border-radius: 5px;
 }
 .title-2 {
 padding-top:25px;
@@ -115,17 +119,15 @@ background-color:rgba(34,34,34,0.25);
 font-size:24px;
 }
 .text-center {
-padding-top: 50px;
+padding-top: 20px;
 max-width:530px;
 width:100%;
+max-height:320px;
+height:100%;
 }
 .flex-1 p {
 padding-top:10px;
 }
-.flex-2 b {
-padding-bottom:10px;
-}
-
 .tm-brand-container {
   max-width: 400px;
   height: 120px;
@@ -273,14 +275,15 @@ border-radius:10%;
 }
 
 .btn {
-  border-radius: 0;
+  border-radius: 5px;
   padding: 13px 40px;
   font-size: 1.3rem;
 }
 
 .btn-primary {
   background-color: white;
-  border: 0;  
+  border: 0;
+  border-radius: 5px;
   color: #3E3F40;
 }
 
@@ -293,9 +296,12 @@ border-radius:10%;
   background-color: #495057;
   outline: none;
   border: none;
+  transition: 0.4s;
 }
+
+
 /* Hotel */
-.title {
+.title5 {
   margin: auto;
   width: 1280px;
   height: 70px;
@@ -438,6 +444,9 @@ border-radius:10%;
 .reviewText2 {
   margin: 30px 0px 0px 0px;
 }
+
+
+
 /* Features section */
 #tmFeatures {
   padding-top: 68px;
@@ -451,6 +460,8 @@ border-radius:10%;
   display: flex;
   justify-content: space-around;
   width: 1230px;
+  max-height:550px;
+  height:100%;
   border-radius: 10px;
   text-align: center;
   padding: 40px 50px;
@@ -464,9 +475,9 @@ border-radius:10%;
   margin-bottom: 5px;
 }
 .tm-feature-icon-container {
-  max-width: 500px;
+  max-width: 520px;
   width: 100%;
-  max-height: 275px;
+  max-height: 380px;
   height: 100%;
   border-radius: 2%;
   display: flex;
@@ -500,12 +511,14 @@ border-radius:10%;
   margin-right: 20px;
   width: 400px;
   height: auto;
+  border-radius: 5px;
 }
 
 .tm-call-to-action-text {
   padding: 50px 60px;
   min-height: 400px;
   width: calc(100% - 400px);
+  border-radius: 5px;
 }
 
 .tm-call-to-action-title {

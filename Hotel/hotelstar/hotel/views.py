@@ -76,9 +76,10 @@ def single_test(request, id):
     }
     return render(request, 'hotel/single_test.html', context)
 
-def see_more(reqeust):
+def see_more(request):
     seemore = Hotel.objects.all()
     context = {
         'seemore':seemore,
+
     }
-    return render(reqeust, 'hotel/seemore.html', context)
+    return render(request, 'hotel/seemore.html', context)
