@@ -298,7 +298,48 @@ border-radius:10%;
   border: none;
   transition: 0.4s;
 }
+/* Hotel */
+.title {
+  margin: auto;
+  width: 1280px;
+  height: 70px;
+  margin: 0px 0px 30px 0px;
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.titleplacement {
+  width: 280px;
+  height: 70px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.titletext {
+  color: #666768;
+  font-family: italic;
+  font-size: 40px;
+}
 
+.cover {
+  width: 1275px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.hoteldesc {
+  margin-top: 30px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 30px;
+  width: 1275px;
+  height: 300px;
+}
+.desctext {
+  font-family: italic;
+  color: #666768;
+  font-size: 20px;
+}
 /* Features section */
 #tmFeatures {
   padding-top: 68px;
