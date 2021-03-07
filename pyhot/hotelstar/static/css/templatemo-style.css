@@ -310,7 +310,7 @@ border-radius:10%;
   justify-content: center;
 }
 .titleplacement {
-  width: 280px;
+  width: 380px;
   height: 70px;
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.8);
@@ -339,6 +339,108 @@ border-radius:10%;
   font-family: italic;
   color: #666768;
   font-size: 20px;
+}
+.roomContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 30px 0px 0px 0px;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 350px;
+  border-radius: 5px;
+}
+.roomImgContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.roomPictures {
+  width: 300px;
+  height: auto;
+}
+.paddingForTtl {
+  padding: 15px 0px 0px 0px;
+  font-family: italic;
+  color: #666768;
+  font-size: 20px;
+}
+.paddingForBtn {
+  padding: 0px 0px 15px 0px;
+}
+.facilities-reviews {
+  width: 1275px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 30px 0px 0px 0px;
+}
+.facilities {
+  width: 375px;
+  height: 350px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+}
+.reviews {
+  width: 800px;
+  height: 350px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+}
+.factitle {
+  padding: 0px 0px 0px 40px;
+  font-family: italic;
+  color: #666768;
+  font-size: 24px;
+}
+.fac {
+  font-size: 20px;
+  margin: 0px 0px 5px 0px;
+}
+.reviews {
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.reviewBox1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px;
+}
+.reviewBox1Child {
+  width: 400px;
+  height: 100px;
+}
+.nameHolder {
+  display: flex;
+  flex-direction: row;
+}
+.iconsize {
+  font-size: 20px;
+}
+.reviewText {
+  font-size: 16px;
+  color: #666768;
+  font-family: italic;
+}
+.customerPic {
+  width: 50px;
+  height: auto;
+  border-radius: 40px;
+}
+.customerName {
+  padding: 6px 0px 0px 10px;
+  color: #666768;
+  font-family: italic;
+}
+.reviewBox2 {
+  width: 300px;
+  height: 275px;
+}
+.reviewText2 {
+  margin: 30px 0px 0px 0px;
 }
 /* Features section */
 #tmFeatures {
