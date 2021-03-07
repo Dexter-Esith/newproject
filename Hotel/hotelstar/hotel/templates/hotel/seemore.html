@@ -1,0 +1,103 @@
+{% extends 'hotel/base.html' %}
+{% block content %}
+{% load static %}
+
+        <!-- Hotel -->
+        <section>
+            <div class="title">
+                <div class="titleplacement">
+                    <p class="titletext">Ambassadori Hotel</p>
+                </div>
+            </div>
+            <img src="media/images/ambassadori.jpg" class="cover" alt="tinki">
+            <div class="hoteldesc">
+                <p class="titletext">Hotel Description:</p>
+                <p class="desctext">
+                    Boasting an elegant Italian interior, Ambassadori Tbilisi Hotel is located in historical, cultural and nightlife center of Tbilisi City. Hotel offers 120 tastefully decorated rooms, out of which 84 are placed in a newly built, luxurious part of the building. Furniture at the property is exclusively decorated and manufactured for Ambassadori Tbilisi Hotel. Along with a fancy indoor swimming pool, guests can take an advantage of spa, fitness center, sauna as well as a sun terrace. Free Wi-Fi and and free private parking are available at the property.
+                </p>
+            </div>
+            <div class="roomContainer">
+                <div class="roomImgContainer">
+                    <p class="paddingForTtl">Luxury Suit - $220</p>
+                    <img src="media/images/luxurySuit.jpg" alt="Luxury Suit Image" class="roomPictures">
+                    <form class="paddingForBtn">
+                      <a href="seemore.html"> <input class="see-more" type="button" value="Book"></a>
+                    </form>
+                </div>
+                <div class="roomImgContainer">
+                    <p class="paddingForTtl">Junior Suit - $180</p>
+                    <img src="media/images/juniorSuit.jpg" alt="Luxury Suit Image" class="roomPictures">
+                    <form class="paddingForBtn">
+                      <a href="seemore.html"> <input class="see-more" type="button" value="Book"></a>
+                    </form>
+                </div>
+                <div class="roomImgContainer">
+                    <p class="paddingForTtl">Superior Twin - $150</p>
+                    <img src="media/images/superiorTwin.jpg" alt="Luxury Suit Image" class="roomPictures">
+                    <form class="paddingForBtn">
+                      <a href="seemore.html"> <input class="see-more" type="button" value="Book"></a>
+                    </form>
+                </div>
+            </div>
+            <div class="facilities-reviews">
+                <div class="facilities">
+                   <p class="factitle">Popular Facilities:</p>
+                   <ul>
+                       <li class="fac"><i class="fas fa-swimmer iconsize"></i>   2 Swimming Pools</li>
+                       <li class="fac"><i class="fas fa-wifi iconsize"></i>   Free WiFi</li>
+                       <li class="fac"><i class="fas fa-parking iconsize"></i>   Free Parking</li>
+                       <li class="fac"><i class="fas fa-utensils iconsize"></i>   Free Breakfast</li>
+                       <li class="fac"><i class="fas fa-shuttle-van iconsize"></i>   Airport Shuttle</li>
+                       <li class="fac"><i class="fas fa-child iconsize"></i>   Family Rooms</li>
+                       <li class="fac"><i class="fas fa-spa iconsize"></i>   Spa</li>
+                       <li class="fac"><i class="fas fa-glass-martini-alt iconsize"></i></i>   Bar</li>
+                   </ul>
+                </div>
+                <div class="reviews">
+                    <div class="reviewBox1">
+                        <div class="reviewBox1Child">
+                            <div class="nameHolder">
+                                <img src="media/images/labrador.jpg" class="customerPic" alt="Customer Picture">
+                                <p class="customerName">cuteLabrador64</p>
+                            </div>
+                            <p class="reviewText">The hotel was really good, the staff were really nice and always willing to help, the roomes were tidy and clean, would recommend.</p>
+                        </div>
+                        <div class="reviewBox1Child">
+                            <div class="nameHolder">
+                                <img src="media/images/pikachu.jpg" class="customerPic" alt="Customer Picture">
+                                <p class="customerName">angryPikachu</p>
+                            </div>
+                            <p class="reviewText">The hotel was really good, the staff were really nice and always willing to help, the roomes were tidy and clean, would recommend.</p>
+                        </div>
+                    </div>
+                    <div class="reviewBox2">
+                        <div class="nameHolder">
+                            <img src="media/images/cat.jpg" class="customerPic" alt="Customer Picture">
+                            <p class="customerName">BossyCat UwU</p>
+                        </div>
+                        <div class="box3Text">
+                            <p class="reviewText2">The hotel was pretty much garbage, the staff did not pet me at all and did not pay attention to me even though I am a total badass king.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Call to Action -->
+        <section class="row" id="tmCallToAction">
+          <div class="col-12 tm-call-to-action-col">
+            <img src="{% static 'img/call-to-action.jpg' %}" alt="Image" class="img-fluid tm-call-to-action-image" />
+            <div class="tm-bg-white tm-call-to-action-text">
+              <h2 class="tm-call-to-action-title">Images by Unsplash</h2>
+              <p class="tm-call-to-action-description">
+                You may browse <a rel="nofollow" href="https://www.toocss.com">Too CSS</a> website for the collection of CSS templates for your projects. Aliquam erat volutpat. Nulla eros est,
+                imperdiet vel feugiat non, ullamcorper mattis nulla.
+              </p>
+              <form action="#" method="get" class="tm-call-to-action-form">
+                <input name="email" type="email" class="tm-email-input" id="email" placeholder="Email" />
+                <button type="submit" class="btn btn-secondary">Get Updates</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        {% endblock %}
