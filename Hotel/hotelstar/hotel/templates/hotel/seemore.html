@@ -49,7 +49,7 @@
                        <li class="fac"><i class="fas fa-shuttle-van iconsize"></i>   Airport Shuttle</li>
                        <li class="fac"><i class="fas fa-child iconsize"></i>   Family Rooms</li>
                        <li class="fac"><i class="fas fa-spa iconsize"></i>   Spa</li>
-                       <li class="fac"><i class="fas fa-glass-martini-alt iconsize"></i>   Bar</li>
+                       <li class="fac"><i class="fas fa-glass-martini-alt iconsize"></i>  Bar</li>
                    </ul>
                 </div>
                 <div class="reviews">
@@ -72,12 +72,24 @@
 
                         <form>
                            <div class="for">
-                               <h2 class="rev-name">Name</h2>
+                               <div class="rate">
+                                   <h2 class="rev-name">Name</h2>
+                                   <div class="checkbox">
+                                          <label for="Rate">Rate us</label>
+                                          <select id="Rate" name="Rate" size="1">
+                                            <option value="1 star">1 Star</option>
+                                            <option value="2 star">2 Star</option>
+                                            <option value="3 star">3 Star</option>
+                                            <option value="4 star">4 Star</option>
+                                            <option value="5 star">5 Star</option>
+                                          </select>
+                                   </div>
+                               </div>
                                <input class="firstname" type="text" name="first_name">
                                <h2 class="name">Email</h2>
                                <input class="email" type="text" name="email">
                                <div class="se-textarea">
-                                   <label for="Message"> Coment </label>
+                                   <label for="Message"> Comment </label>
                                    <textarea id="Message" placeholder="write your review..."></textarea>
                                </div>
                                <div class="buto"><button id="button" class="a" type="submit">SUBMIT</button></div>

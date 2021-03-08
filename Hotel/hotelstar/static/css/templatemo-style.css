@@ -307,7 +307,8 @@ border-radius:10%;
 /* Hotel */
 .title5 {
   margin: auto;
-  width: 1280px;
+  max-width: 1280px;
+  width: 100%;
   height: 70px;
   margin: 0px 0px 30px 0px;
   border-radius: 5px;
@@ -341,7 +342,7 @@ border-radius:10%;
   padding: 30px;
   max-width: 1275px;
   width: 100%;
-  height: 300px;
+  height: auto;
 }
 .desctext {
   font-family: italic;
@@ -395,12 +396,12 @@ border-radius:10%;
   border-radius: 5px;
 }
 
-}
+
 .se-p {
   padding-left: 20px;
   font-family: italic;
   color: #666768;
-  font-size: 64px;
+  font-size: 24px;
 }
 .fac {
   font-size: 20px;
@@ -471,7 +472,7 @@ background-color: black;
 color: #fff;
 width: 120px;
 height: 40px;
-margin-top:51px;
+margin-top:48px;
 transition:0.6s;
 border-radius: 5px;
 }
@@ -504,8 +505,20 @@ border-radius: 5px;
 }
 .see-rev {
 margin-top: 40px;
-
-
+}
+.rate {
+display: flex;
+justify-content: space-between;
+}
+.checkbox select {
+width: 70px;
+height: 30px;
+font-size: 16px;
+border-radius: 5px;
+}
+.checkbox {
+display: flex;
+justify-content
 }
 /* Features section */
 #tmFeatures {
