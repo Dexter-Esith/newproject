@@ -40,7 +40,7 @@
             </div>
             <div class="facilities-reviews">
                 <div class="facilities">
-                   <p class="factitle">Popular Facilities:</p>
+                   <p class="se-p">Popular Facilities</p>
                    <ul>
                        <li class="fac"><i class="fas fa-swimmer iconsize"></i>   2 Swimming Pools</li>
                        <li class="fac"><i class="fas fa-wifi iconsize"></i>   Free WiFi</li>
@@ -49,7 +49,7 @@
                        <li class="fac"><i class="fas fa-shuttle-van iconsize"></i>   Airport Shuttle</li>
                        <li class="fac"><i class="fas fa-child iconsize"></i>   Family Rooms</li>
                        <li class="fac"><i class="fas fa-spa iconsize"></i>   Spa</li>
-                       <li class="fac"><i class="fas fa-glass-martini-alt iconsize"></i></i>   Bar</li>
+                       <li class="fac"><i class="fas fa-glass-martini-alt iconsize"></i>Bar</li>
                    </ul>
                 </div>
                 <div class="reviews">
@@ -64,18 +64,30 @@
                             <p class="reviewText">{{ review.comment }}</p>
                         </div>
                         {% endfor %}
+                        <form>
+                            <a href="#"> <input class="see-more see-rev" type="button" value="All reviews"></a>
+                        </form>
                     </div>
                     <div class="reviewBox2">
-                        <div class="nameHolder">
-                            <img src="{% static 'img/cat.jpg' %}" class="customerPic" alt="Customer Picture">
-                            <p class="customerName">BossyCat UwU</p>
-                        </div>
-                        <div class="box3Text">
-                            <p class="reviewText2">The hotel was pretty much garbage, the staff did not pet me at all and did not pay attention to me even though I am a total badass king.</p>
-                        </div>
-                         <form>
-                            <input class="see-more" type="button" value="More">
-                         </form>
+
+                        <form>
+                           <div class="for">
+                               <h2 class="rev-name">Name</h2>
+                               <input class="firstname" type="text" name="first_name">
+                               <h2 class="name">Email</h2>
+                               <input class="email" type="text" name="email">
+                               <div class="se-textarea">
+                                   <label for="Message"> Coment </label>
+                                   <textarea id="Message" placeholder="write your review..."></textarea>
+                               </div>
+                               <div class="buto"><button id="button" class="a" type="submit">SUBMIT</button></div>
+                               <script>
+                                   document.getElementById('button').addEventListener('click', function(){
+                                       alert('Your review has been submitted successfully')
+                                   })
+                               </script>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
