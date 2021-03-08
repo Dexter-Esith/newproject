@@ -9,6 +9,7 @@
                  data-parallax="scroll"
                  data-z-index="101"
                  data-image-src="{% static 'img/ice-mountain.jpg' %}">
+
                  <div class="tm-bg-black-transparent text-center tm-services-header tm-testimonials-header">
                     <h2 class="text-uppercase tm-services-page-title tm-testimonials-page-title">Testimonials</h2>
                     <p class="tm-services-description mb-0 small">
@@ -20,169 +21,19 @@
         </section>
 
         <section class="row tm-testimonials-section">
-          <div class="col-12 tm-carousel">
-            <div class="hotels-search-container">
-                <div class="search">
-                    
+            <div class="col-12 tm-carousel">
+                {% for i in contacts %}
+                <div class="tm-bg-black-transparent tm-testimonial-box text-center">
+                  <h3 class="tm-about-name tm-uppercase">
+                      <a href="{% url 'hotel:singletest' i.id %}">{{ i.name }}</a>
+                  </h3>
+                                      <div class="tm-person-img-container">
+                    <img src="{{ i.picture.url }}" alt="Image" class="img-fluid mx-auto"/>
+                  </div>
+                  <p class="tm-about-description"> {{ i.message }} </p>
+                    <p> sent from: {{ i.email }}</p>
                 </div>
-                <div class="hotels-container">
-                    <div class="hotels-container-child">
-                        <div class="hotels-child-image">
-                           <img src="static/img/stamba.jpg" class="hotels-child-image">
-                        </div>
-                        <div class="hotels-child-text">
-                            <div>
-                                <p>Stamba Hotel</p>
-                            </div>
-                            <div>
-                                <p class="hotels-child-text-child">Located within Vera, a charming and historic quarter of Tbilisi, Stamba Hotel counts chic restaurants, independent boutiques and concept stores among its neighbors.</p>
-                            </div>
-                        </div>
-                        <div class="hotels-child-rating">
-                            <div class="hotels-child-rating-child">
-                                <p>Exceptional</p>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <p>9.7</p>
-                            </div>
-                            <div>
-                                <div>
-                                    <form>
-                                        <input class="see-more" type="button" value="Show Prices">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotels-container-child">
-                        <div class="hotels-child-image">
-                           <img src="static/img/luxurySuit.jpg" class="hotels-child-image">
-                        </div>
-                        <div class="hotels-child-text">
-                            <div>
-                                <p>Ambassadori Hotel</p>
-                            </div>
-                            <div>
-                                <p class="hotels-child-text-child">Offering the ski-to-door access, the 5-star Ambassadori Goderdzi Hotel is located in Adjara region, south-west part of Georgia, and is in the centre of the ski resort Goderdzi, opposite the ski slopes...</p>
-                            </div>
-                        </div>
-                        <div class="hotels-child-rating">
-                            <div class="hotels-child-rating-child">
-                                <p>Excellent</p>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <p>8.9</p>
-                            </div>
-                            <div>
-                                <div>
-                                    <form>
-                                        <input class="see-more" type="button" value="Show Prices">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotels-container-child">
-                        <div class="hotels-child-image">
-                           <img src="static/img/courtyard.jpeg" class="hotels-child-image hotel-child-image-border">
-                        </div>
-                        <div class="hotels-child-text">
-                            <div>
-                                <p>Courtyard Hotel</p>
-                            </div>
-                            <div>
-                                <p class="hotels-child-text-child">Located on Freedom Square in the heart of Tbilisi, this grand hotel features an indoor pool, fitness center with sauna and an elegant restaurant. Tbilisi Old Town is within a 5 minute walk.</p>
-                            </div>
-                        </div>
-                        <div class="hotels-child-rating">
-                            <div class="hotels-child-rating-child">
-                                <p>Excellent</p>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <p>9.2</p>
-                            </div>
-                            <div>
-                                <div>
-                                    <form>
-                                        <input class="see-more" type="button" value="Show Prices">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotels-container-child">
-                        <div class="hotels-child-image">
-                           <img src="static/img/superiorTwin.jpg" class="hotels-child-image">
-                        </div>
-                        <div class="hotels-child-text">
-                            <div>
-                                <p>Hilton Hotel</p>
-                            </div>
-                            <div>
-                                <p class="hotels-child-text-child">Directly on the beach, Sonesta Resort Hilton Head Island is 10 minutes from Shelter Cove Marina and The Mall at Shelter Cove. Guests can enjoy on-site dining options and free Wi-Fi.</p>
-                            </div>
-                        </div>
-                        <div class="hotels-child-rating">
-                            <div class="hotels-child-rating-child">
-                                <p>Very Good</p>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star"></span>
-                                <p>8.3</p>
-                            </div>
-                            <div>
-                                <div>
-                                    <form>
-                                        <input class="see-more" type="button" value="Show Prices">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hotels-container-child">
-                        <div class="hotels-child-image">
-                           <img src="static/img/biltmoret.jpg" class="hotels-child-image">
-                        </div>
-                        <div class="hotels-child-text">
-                            <div>
-                                <p>Biltmore Hotel</p>
-                            </div>
-                            <div>
-                                <p class="hotels-child-text-child">Offering an indoor pool, spa and a fitness center, The Biltmore Tbilisi Hotel is located in Tbilisi, 984 feet from Tbilisi Opera and Ballet Theater. The hotel has a sun terrace and a sauna.</p>
-                            </div>
-                        </div>
-                        <div class="hotels-child-rating">
-                            <div class="hotels-child-rating-child">
-                                <p>Perfection</p>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <span class="fa fa-star checked"></span>
-                                <p>9.9</p>
-                            </div>
-                            <div>
-                                <div>
-                                    <form>
-                                        <input class="see-more" type="button" value="Show Prices">
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                {% endfor %}
           </div>
         </section>
 
