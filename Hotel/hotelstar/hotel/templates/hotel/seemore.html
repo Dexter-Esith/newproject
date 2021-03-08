@@ -6,34 +6,33 @@
         <section>
             <div class="title5">
                 <div class="titleplacement">
-                    <p class="titletext">Ambassadori Hotel</p>
+                    <p class="titletext">{{ seemore.name }}</p>
                 </div>
             </div>
-            <img src="media/images/ambassadori.jpg" class="cover" alt="tinki">
+            <img src="{% static 'img/ambassadori.jpg' %}" class="cover" alt="tinki">
             <div class="hoteldesc">
                 <p class="titletext">Hotel Description:</p>
                 <p class="desctext">
-                    Boasting an elegant Italian interior, Ambassadori Tbilisi Hotel is located in historical, cultural and nightlife center of Tbilisi City. Hotel offers 120 tastefully decorated rooms, out of which 84 are placed in a newly built, luxurious part of the building. Furniture at the property is exclusively decorated and manufactured for Ambassadori Tbilisi Hotel. Along with a fancy indoor swimming pool, guests can take an advantage of spa, fitness center, sauna as well as a sun terrace. Free Wi-Fi and and free private parking are available at the property.
-                </p>
+                    {{ seemore.description }}                </p>
             </div>
             <div class="roomContainer">
                 <div class="roomImgContainer">
                     <p class="paddingForTtl">Luxury Suit - $220</p>
-                    <img src="media/images/luxurySuit.jpg" alt="Luxury Suit Image" class="roomPictures">
+                    <img src="{% static 'img/luxurySuit.jpg' %}" alt="Luxury Suit Image" class="roomPictures">
                     <form class="paddingForBtn">
                       <a href="seemore.html"> <input class="see-more" type="button" value="Book"></a>
                     </form>
                 </div>
                 <div class="roomImgContainer">
                     <p class="paddingForTtl">Junior Suit - $180</p>
-                    <img src="media/images/juniorSuit.jpg" alt="Luxury Suit Image" class="roomPictures">
+                    <img src="{% static 'img/juniorSuit.jpg' %}" alt="Luxury Suit Image" class="roomPictures">
                     <form class="paddingForBtn">
                       <a href="seemore.html"> <input class="see-more" type="button" value="Book"></a>
                     </form>
                 </div>
                 <div class="roomImgContainer">
                     <p class="paddingForTtl">Superior Twin - $150</p>
-                    <img src="media/images/superiorTwin.jpg" alt="Luxury Suit Image" class="roomPictures">
+                    <img src="{% static 'img/superiorTwin.jpg' %}" alt="Luxury Suit Image" class="roomPictures">
                     <form class="paddingForBtn">
                       <a href="seemore.html"> <input class="see-more" type="button" value="Book"></a>
                     </form>
@@ -56,24 +55,19 @@
                 <div class="reviews">
                     <div class="reviewBox1">
                         <h1 class="se-review">Reviews:</h1>
+                        {% for review in reviews %}
                         <div class="reviewBox1Child">
                             <div class="nameHolder">
-                                <img src="media/images/labrador.jpg" class="customerPic" alt="Customer Picture">
-                                <p class="customerName">cuteLabrador64</p>
+                                <img src="{{ review.picture.url }}" class="customerPic" alt="Customer Picture">
+                                <p class="customerName">{{ review.customer_name }}</p>
                             </div>
-                            <p class="reviewText">The hotel was really good, the staff were really nice and always willing to help, the roomes were tidy and clean, would recommend.</p>
+                            <p class="reviewText">{{ review.comment }}</p>
                         </div>
-                        <div class="reviewBox1Child">
-                            <div class="nameHolder">
-                                <img src="media/images/pikachu.jpg" class="customerPic" alt="Customer Picture">
-                                <p class="customerName">angryPikachu</p>
-                            </div>
-                            <p class="reviewText">The hotel was really good, the staff were really nice and always willing to help, the roomes were tidy and clean, would recommend.</p>
-                        </div>
+                        {% endfor %}
                     </div>
                     <div class="reviewBox2">
                         <div class="nameHolder">
-                            <img src="media/images/cat.jpg" class="customerPic" alt="Customer Picture">
+                            <img src="{% static 'img/cat.jpg' %}" class="customerPic" alt="Customer Picture">
                             <p class="customerName">BossyCat UwU</p>
                         </div>
                         <div class="box3Text">
@@ -86,6 +80,5 @@
                 </div>
             </div>
         </section>
-        <!-- Call to Action -->
 
         {% endblock %}

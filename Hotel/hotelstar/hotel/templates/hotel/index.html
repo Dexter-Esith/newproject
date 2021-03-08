@@ -41,7 +41,7 @@
                 <p class="text-center">{{ hotel.description }}</p>
                     {{ hotel.star }}
                  <form>
-                     <input class="see-more" type="button" value="See More">
+                      <a href="{% url 'hotel:seemore' hotel.id %}"> <input class="see-more" type="button" value="See More"></a>
                  </form>
          </div>
         </div>

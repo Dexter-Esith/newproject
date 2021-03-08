@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . models import Hotel, Contact, HotelReview
+from .forms import TestForm
 # Create your views here.
 def homepage(request):
     hotels = Hotel.objects.all()
@@ -70,16 +71,31 @@ def test(request):
 
 def single_test(request, id):
     contact = Contact.objects.get(id=id)
+    form = TestForm()
+    if request.method == "GET":
+        form = TestForm(request.GET)
+        if form.is_valid():
+            data = form.save(commit=False)
+            data.permission = True
+            data.save()
+
+            return redirect('hotel:singletest', id)
+
+
     context = {
         'contact':contact,
+        'form':form,
 
     }
     return render(request, 'hotel/single_test.html', context)
 
-def see_more(request):
-    seemore = Hotel.objects.all()
+def see_more(request, id):
+    seemore = Hotel.objects.get(id=id)
+    reviews = HotelReview.objects.filter(review=id)
+
     context = {
         'seemore':seemore,
+        'reviews':reviews,
 
     }
     return render(request, 'hotel/seemore.html', context)

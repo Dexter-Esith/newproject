@@ -11,6 +11,6 @@ urlpatterns = [
     path('contact', views.contact, name='contact'),
     path('test', views.test, name='test'),
     path('singletest/<int:id>', views.single_test, name='singletest'),
-    path('seemore', views.see_more, name='seemore'),
+    path('seemore/<int:id>', views.see_more, name='seemore'),
 
 ]

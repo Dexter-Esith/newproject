@@ -26,16 +26,22 @@ class Hotel(models.Model):
 
     class Meta:
 
-        verbose_name_plural = 'Sastumroebi'
+        verbose_name_plural = 'Hotels'
 
 class HotelReview(models.Model):
     review = models.ForeignKey(Hotel, on_delete=models.CASCADE)
+    customer_name = models.CharField(max_length=30)
     comment = models.TextField()
     star = models.IntegerField()
+    picture = models.ImageField(upload_to='images', default="customer-icon.jpg")
+    permission = models.BooleanField(default=True)
 
+    def __str__(self):
+        return "Hotel name: " + self.review.name + "  |  " "Hotel review ID: "+ str(self.id)
 
+    class Meta:
 
-
+        verbose_name_plural = 'Reviews'
 
 
 
@@ -51,4 +57,9 @@ class Contact(models.Model):
 
     class Meta:
 
-        verbose_name_plural = 'Contact'
+        verbose_name_plural = 'Contacts'
+
+
+class Test(models.Model):
+    name = models.CharField(max_length=128)
+    gender = models.CharField(max_length=128)

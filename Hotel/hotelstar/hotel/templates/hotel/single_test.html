@@ -6,7 +6,12 @@
 </head>
 <body>
 
-    <h1>{{ sastumro.name }}</h1>
-    <h2>{{ sastumro.description }}</h2>
+<h1>MY FORM</h1>
+    <br>
+    <form method="GET" action="{% url 'hotel:singletest' contact.id %}">
+    {{ form }}
+        {% csrf_token %}
+        <input type="submit">
+    </form>
 </body>
 </html>
