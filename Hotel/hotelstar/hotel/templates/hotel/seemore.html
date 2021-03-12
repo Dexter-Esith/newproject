@@ -70,15 +70,37 @@
                             <a href="#"> <input class="see-more see-rev" type="button" value="All reviews"></a>
                         </form>
                     </div>
-                    <div class="form-group">
-               <form method="GET" action="{% url 'hotel:seemore' seemore.id %}">
-
-                    Name:<input type="text" name="name">
-                    Comment:<input type="text" name="comment">
-                    Email:<input type="text" name="email">
-                    Rating:<input type="text" name="rating_number">
-                    <input type="submit">
-                 </form>
+                    <div class="reviewBox2">
+                        <form method="GET" action="{% url 'hotel:seemore' seemore.id %}">
+                        <p class="review-title">Write a Review:</p>
+                            <div class="reviewBox2child">
+                                <label>Name</label>
+                                <input type="text" name="name" class="name-email-input">
+                            </div>
+                            <div class="reviewBox2child">
+                                <label>Email</label>
+                                <input type="text" name="email" class="name-email-input">
+                            </div>
+                            <div class="reviewBox2child">
+                                <label>Comment</label>
+                                <textarea type="text" name="comment" class="comment-input"></textarea>
+                            </div>
+                            <div class="reviewBox2child">
+                                <label>Rate Our Service</label>
+                                <form>
+                                  <select name="hotels" id="hotel rating" class="rating-selector">
+                                    <option value="one">  1 Star</option>
+                                    <option value="two">  2 Star</option>
+                                    <option value="three">3 Star</option>
+                                    <option value="four"> 4 Star</option>
+                                    <option value="five"> 5 Star</option>
+                                  </select>
+                                </form>
+                            </div>
+                            <div class="rating-button-holder">
+                                <input type="submit" class="rating-submitter">
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
