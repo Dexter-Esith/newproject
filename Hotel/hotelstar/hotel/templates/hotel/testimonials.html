@@ -23,7 +23,11 @@
           <div class="col-12 tm-carousel">
             <div class="hotels-search-container">
                 <div class="search">
-                    
+                    <from method="GET" action="{% url 'hotel:testimonials' %}">
+                        <input type="text" name="name">
+
+                        <input type="submit">
+                    </from>
                 </div>
                 <div class="hotels-container">
                     <div class="hotels-container-child">

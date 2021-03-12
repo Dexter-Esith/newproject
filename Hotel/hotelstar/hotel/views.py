@@ -39,8 +39,19 @@ def contact(request):
 
 def test(request):
     hotels = Hotel.objects.all()
+    hotels_star = request.GET.get('stars')
+    hotels_description = request.GET.get('description')
+    hotels_name = request.GET.get('name')
+
     bad_hotels = ()
     shit_hotels = ()
+
+    if hotels_name != '' and hotels_name is not None:
+        hotels = hotels.filter(name__contains=hotels_name)
+    elif hotels_description != '' and hotels_description is not None:
+        hotels = hotels.filter(description__contains=hotels_description)
+    elif hotels_star != '' and hotels_star is not None:
+        hotels = hotels.filter(stars__gte=hotels_star)
 
     for i in hotels:
         if i.hotel_type == "1":
@@ -84,12 +95,17 @@ def single_test(request, id):
 
 def see_more(request, id):
     seemore = Hotel.objects.get(id=id)
-    reviews = HotelReview.objects.filter(review=id)
+    reviews = HotelReview.objects.filter(review=id, permission=True)
     form = HotelReviewForm()
     if request.method == "GET":
-        form = HotelReviewForm(request.GET)
+        form = HotelReviewForm(request.GET, request.FILES)
         if form.is_valid():
             data = form.save(commit=False)
+            data.review = seemore
+            data.name = form.cleaned_data.get("name")
+            data.email = form.cleaned_data.get('email')
+            data.comment = form.cleaned_data.get('comment')
+            data.rating_number = form.cleaned_data.get('rating_number')
             data.permission = True
             data.save()
 

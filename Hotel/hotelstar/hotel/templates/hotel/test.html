@@ -6,6 +6,17 @@
 </head>
 <body>
 
+
+                <form method="GET" action="{% url 'hotel:test' %}">
+                        <input type="text" name="name">
+                    <input type="text" name="description">
+                    <input type="text" name="stars">
+
+
+                        <input type="submit">
+                    </form>
+
+
     {% for hotel in bad_hotels %}
     <div>
         <h1><a href="{% url 'hotel:singletest' hotel.id %}">{{ hotel.name }}</a></h1>

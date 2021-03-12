@@ -60,6 +60,8 @@
                             <div class="nameHolder">
                                 <img src="{{ review.picture.url }}" class="customerPic" alt="Customer Picture">
                                 <p class="customerName">{{ review.name }}</p>
+                                <p>{{ review.rating_number }}</p>
+
                             </div>
                             <p class="reviewText">{{ review.comment }}</p>
                         </div>
@@ -69,12 +71,14 @@
                         </form>
                     </div>
                     <div class="form-group">
-                        <form method="GET" action="{% url 'hotel:seemore' seemore.id %}">
-                        <table>
-                        {{ form }}
-                        </table>
-                        <input type="submit" class="see-more">
-                        </form>
+               <form method="GET" action="{% url 'hotel:seemore' seemore.id %}">
+
+                    Name:<input type="text" name="name">
+                    Comment:<input type="text" name="comment">
+                    Email:<input type="text" name="email">
+                    Rating:<input type="text" name="rating_number">
+                    <input type="submit">
+                 </form>
                     </div>
                 </div>
             </div>
