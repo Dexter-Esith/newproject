@@ -59,7 +59,7 @@
                         <div class="reviewBox1Child">
                             <div class="nameHolder">
                                 <img src="{{ review.picture.url }}" class="customerPic" alt="Customer Picture">
-                                <p class="customerName">{{ review.customer_name }}</p>
+                                <p class="customerName">{{ review.name }}</p>
                             </div>
                             <p class="reviewText">{{ review.comment }}</p>
                         </div>
@@ -70,24 +70,10 @@
                     </div>
                     <div class="reviewBox2">
 
-                        <form>
-                           <div class="for">
-                               <h2 class="rev-name">Name</h2>
-                               <input class="firstname" type="text" name="first_name">
-                               <h2 class="name">Email</h2>
-                               <input class="email" type="text" name="email">
-                               <div class="se-textarea">
-                                   <label for="Message"> Coment </label>
-                                   <textarea id="Message" placeholder="write your review..."></textarea>
-                               </div>
-                               <div class="buto"><button id="button" class="a" type="submit">SUBMIT</button></div>
-                               <script>
-                                   document.getElementById('button').addEventListener('click', function(){
-                                       alert('Your review has been submitted successfully')
-                                   })
-                               </script>
-                            </div>
-                        </form>
+    <form method="GET" action="{% url 'hotel:seemore' seemore.id %}">
+    {{ form }}
+        <input type="submit">
+    </form>
                     </div>
                 </div>
             </div>

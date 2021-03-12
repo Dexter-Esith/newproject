@@ -1,18 +1,18 @@
 from django.shortcuts import render, redirect
 from . models import Hotel, Contact, HotelReview
-from .forms import TestForm
+from .forms import TestForm, HotelReviewForm
+
+
 # Create your views here.
+
 def homepage(request):
     hotels = Hotel.objects.all()
     reviews = HotelReview.objects.all()
     for i in reviews:
-        print(i.review.stars)
-    good_hotels = ()
+        good_hotels = ()
     for i in hotels:
         if i.stars == 5 and len(good_hotels) < 3:
             good_hotels += (i,)
-    print(good_hotels)
-
 
     context = {
         'good_hotels' : good_hotels,
@@ -24,9 +24,7 @@ def homepage(request):
 
 def about(request):
     hotels = Hotel.objects.all()
-    print(hotels)
     hotel = Hotel.objects.get(id=1)
-    print(hotel)
     rame = Hotel.objects.filter(stars=2)
     return render(request, 'hotel/about.html')
 
@@ -34,12 +32,7 @@ def services(request):
     return render(request, 'hotel/services.html')
 
 def testimonials(request):
-    contacts = Contact.objects.all()
-    print(contacts)
-    context = {
-        'contacts' : contacts,
-    }
-    return render(request, 'hotel/testimonials.html', context)
+    return render(request, 'hotel/testimonials.html')
 
 def contact(request):
     return render(request, 'hotel/contact.html')
@@ -92,10 +85,20 @@ def single_test(request, id):
 def see_more(request, id):
     seemore = Hotel.objects.get(id=id)
     reviews = HotelReview.objects.filter(review=id)
+    form = HotelReviewForm()
+    if request.method == "GET":
+        form = HotelReviewForm(request.GET)
+        if form.is_valid():
+            data = form.save(commit=False)
+            data.permission = True
+            data.save()
+
+            return redirect('hotel:seemore', id)
 
     context = {
         'seemore':seemore,
         'reviews':reviews,
+        'form':form,
 
     }
     return render(request, 'hotel/seemore.html', context)
