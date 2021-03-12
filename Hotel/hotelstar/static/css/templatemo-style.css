@@ -588,6 +588,10 @@ padding-right: 10px;
 .rating-submitter:hover {
   background-color:rgba(34,34,34,0.25);
 }
+.review-title {
+  text-align: center;
+  font-size: 20px;
+}
 /* Test */
 .hotels-search-container {
   display: flex;
