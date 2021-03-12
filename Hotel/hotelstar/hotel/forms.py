@@ -10,3 +10,10 @@ class HotelReviewForm(forms.ModelForm):
     class Meta:
         model = HotelReview
         fields = ('name', 'email', 'comment', 'rating_number')
+
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'email': forms.TextInput(attrs={'class': 'form-control'}),
+            'comment': forms.Textarea(attrs={'class': 'form-control'}),
+            'rating_number': forms.Select(attrs={'class': 'form-control'})
+        }

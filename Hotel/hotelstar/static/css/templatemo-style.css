@@ -395,10 +395,9 @@ border-radius:10%;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
 }
-
-
 .se-p {
   padding-left: 20px;
+  padding-top: 10px;
   font-family: italic;
   color: #666768;
   font-size: 24px;
@@ -523,6 +522,9 @@ justify-content
 }
 .checkbox label {
 padding-right: 10px;
+}
+textarea {
+
 }
 /* Test */
 .hotels-search-container {
@@ -1017,14 +1019,13 @@ p {
 }
 
 .form-control {
-  background-color: transparent;
   color: white;
   padding: 25px 20px;
+  resize: none;
 }
 
 .form-control:focus {
-  background-color: transparent;
-  color: white;
+  color: black;
 }
 
 .form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

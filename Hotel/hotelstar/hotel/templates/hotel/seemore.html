@@ -68,11 +68,13 @@
                             <a href="#"> <input class="see-more see-rev" type="button" value="All reviews"></a>
                         </form>
                     </div>
-                    <div class="reviewBox2">
-    <form method="GET" action="{% url 'hotel:seemore' seemore.id %}">
-    {{ form }}
-        <input type="submit">
-    </form>
+                    <div class="form-group">
+                        <form method="GET" action="{% url 'hotel:seemore' seemore.id %}">
+                        <table>
+                        {{ form }}
+                        </table>
+                        <input type="submit" class="see-more">
+                        </form>
                     </div>
                 </div>
             </div>
