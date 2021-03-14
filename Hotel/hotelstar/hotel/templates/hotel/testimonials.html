@@ -23,32 +23,53 @@
             <div class="hotels-search-container">
                 <div class="tes-search">
                     <div class="search">
-                        <h2>Destination/property name:</h2>
-                        <from method="GET" action="{% url 'hotel:testimonials' %}">
+                        <h2>Destination/property name</h2>
+                        <form method="GET" action="{% url 'hotel:testimonials' %}">
                             <input class="ser-input" type="text" name="search" placeholder="Search">
-                        </from>
+                        </form>
                     </div>
-                    <div class="search">
-                        <div class="te-checkbox">
-                            <div class="chch"><input type="checkbox" name="star" value="stars"></div>
-                            <label for="stars">1 star</label>
+                    <div class="h2-div">
+                        <h2 class="h2-star">Star rating</h2>
+                    </div>
+                    <div class="search second">
+                        <div class="te-checkbox ext">
+                            <div class="te-checkbox child">
+                                <div class="chch"><input type="checkbox" name="star" value="stars"></div>
+                                <label class="label" for="stars">1 star</label>
+                            </div>
+                            <h2>25</h2>
                         </div>
                         <div class="te-checkbox">
-                            <div class="chch"><input type="checkbox" name="star" value="stars"></div>
-                            <label for="stars">2 star</label>
+                            <div class="te-checkbox child">
+                                <div class="chch"><input type="checkbox" name="star" value="stars"></div>
+                                <label class="label" for="stars">2 star</label>
+                            </div>
+                            <h2>35</h2>
                         </div>
                         <div class="te-checkbox">
-                            <div class="chch"><input type="checkbox" name="star" value="stars"></div>
-                            <label for="stars">3 star</label>
+                            <div class="te-checkbox child">
+                                <div class="chch"><input type="checkbox" name="star" value="stars"></div>
+                                <label class="label" for="stars">3 star</label>
+                            </div>
+                            <h2>15</h2>
                         </div>
                         <div class="te-checkbox">
-                            <div class="chch"><input type="checkbox" name="star" value="stars"></div>
-                            <label for="stars">4 star</label>
+                            <div class="te-checkbox child">
+                                <div class="chch"><input type="checkbox" name="star" value="stars"></div>
+                                <label class="label" for="stars">4 star</label>
+                            </div>
+                            <h2>23</h2>
                         </div>
                         <div class="te-checkbox">
-                            <div class="chch"><input type="checkbox" name="star" value="stars"></div>
-                            <label for="stars">5 star</label>
+                            <div class="te-checkbox child">
+                                <div class="chch"><input type="checkbox" name="star" value="stars"></div>
+                                <label class="label" for="stars">5 star</label>
+                            </div>
+                            <h2>12</h2>
                         </div>
+                    </div>
+                    <div class="h2-div">
+                        <h2 class="h2-star">Review score</h2>
                     </div>
                 </div>
                 <div class="hotels-container">
