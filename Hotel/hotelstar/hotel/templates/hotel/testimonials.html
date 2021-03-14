@@ -1,7 +1,6 @@
 {% extends 'hotel/base.html' %}
 {% block content %}
 {% load static %}
-
         <!-- Testimonials header -->
         <section class="row" id="tmServices">
           <div class="col-12">
@@ -22,12 +21,35 @@
         <section class="row tm-testimonials-section">
           <div class="col-12 tm-carousel">
             <div class="hotels-search-container">
-                <div class="search">
-                    <from method="GET" action="{% url 'hotel:testimonials' %}">
-                        <input type="text" name="name">
-
-                        <input type="submit">
-                    </from>
+                <div class="tes-search">
+                    <div class="search">
+                        <h2>Destination/property name:</h2>
+                        <from method="GET" action="{% url 'hotel:testimonials' %}">
+                            <input class="ser-input" type="text" name="search" placeholder="Search">
+                        </from>
+                    </div>
+                    <div class="search">
+                        <div class="te-checkbox">
+                            <div class="chch"><input type="checkbox" name="star" value="stars"></div>
+                            <label for="stars">1 star</label>
+                        </div>
+                        <div class="te-checkbox">
+                            <div class="chch"><input type="checkbox" name="star" value="stars"></div>
+                            <label for="stars">2 star</label>
+                        </div>
+                        <div class="te-checkbox">
+                            <div class="chch"><input type="checkbox" name="star" value="stars"></div>
+                            <label for="stars">3 star</label>
+                        </div>
+                        <div class="te-checkbox">
+                            <div class="chch"><input type="checkbox" name="star" value="stars"></div>
+                            <label for="stars">4 star</label>
+                        </div>
+                        <div class="te-checkbox">
+                            <div class="chch"><input type="checkbox" name="star" value="stars"></div>
+                            <label for="stars">5 star</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="hotels-container">
                     <div class="hotels-container-child">
