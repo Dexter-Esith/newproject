@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from . models import Hotel, Contact, HotelReview
-from .forms import TestForm, HotelReviewForm
+from .forms import TestForm, HotelReviewForm, ContactForm
 
 
 # Create your views here.
@@ -8,8 +8,7 @@ from .forms import TestForm, HotelReviewForm
 def homepage(request):
     hotels = Hotel.objects.all()
     reviews = HotelReview.objects.all()
-    for i in reviews:
-        good_hotels = ()
+    good_hotels = ()
     for i in hotels:
         if i.stars == 5 and len(good_hotels) < 3:
             good_hotels += (i,)
@@ -20,7 +19,6 @@ def homepage(request):
     }
 
     return render(request, 'hotel/index.html', context)
-
 
 def about(request):
     hotels = Hotel.objects.all()
@@ -34,8 +32,28 @@ def services(request):
 def testimonials(request):
     return render(request, 'hotel/testimonials.html')
 
-def contact(request):
-    return render(request, 'hotel/contact.html')
+def contact(request, id):
+    contact = Contact.objects.get(id=id)
+    form = ContactForm()
+    if request.method == "GET":
+        form = ContactForm(request.GET or None)   #request.FILES მედიას ატვირთვა თუ გვინდა
+        if form.is_valid():
+            data = form.save(commit=False)
+            data.review = contact
+            data.name = form.cleaned_data.get("name")
+            data.email = form.cleaned_data.get('email')
+            data.message = form.cleaned_data.get('message')
+            data.permission = True
+            data.save()
+
+            return redirect('hotel:contact', id)
+
+    context = {
+        'contact':contact,
+        'form':form,
+
+    }
+    return render(request, 'hotel/seemore.html', context)
 
 def test(request):
     hotels = Hotel.objects.all()
@@ -95,10 +113,11 @@ def single_test(request, id):
 
 def see_more(request, id):
     seemore = Hotel.objects.get(id=id)
-    reviews = HotelReview.objects.filter(review=id, permission=True)
+    reviews = HotelReview.objects.filter(review=id, permission=True)[:3]
+
     form = HotelReviewForm()
     if request.method == "GET":
-        form = HotelReviewForm(request.GET, request.FILES)
+        form = HotelReviewForm(request.GET or None)   #request.FILES მედიას ატვირთვა თუ გვინდა
         if form.is_valid():
             data = form.save(commit=False)
             data.review = seemore
@@ -115,6 +134,5 @@ def see_more(request, id):
         'seemore':seemore,
         'reviews':reviews,
         'form':form,
-
     }
     return render(request, 'hotel/seemore.html', context)

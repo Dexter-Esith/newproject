@@ -45,7 +45,8 @@ class HotelReview(models.Model):
     )
 
     rating_number = models.CharField(max_length=128, default="5", choices=RATING_NUMBER, null=True)
-    picture = models.ImageField(upload_to='images', default="bendu.jpg", null=True)
+    picture = models.ImageField(upload_to='images', default="images/saakadze.jpg", null=True)
+    created_on = models.DateTimeField(auto_now_add=True)
     permission = models.BooleanField(default=True)
 
     def __str__(self):
@@ -54,15 +55,14 @@ class HotelReview(models.Model):
     class Meta:
 
         verbose_name_plural = 'Reviews'
-
+        ordering = ['-created_on']
 
 
 
 class Contact(models.Model):
-    name = models.CharField(max_length=25)
-    email = models.EmailField(max_length=50)
-    message = models.TextField()
-    picture = models.ImageField(upload_to='images', default='images/drug.gif')
+    name = models.CharField(max_length=128)
+    email = models.EmailField(max_length=128)
+    message = models.TextField(max_length=1000)
 
     def __str__(self):
         return self.name

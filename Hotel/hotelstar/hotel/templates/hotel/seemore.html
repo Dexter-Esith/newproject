@@ -59,8 +59,9 @@
                         <div class="reviewBox1Child">
                             <div class="nameHolder">
                                 <img src="{{ review.picture.url }}" class="customerPic" alt="Customer Picture">
-                                <p class="customerName">{{ review.name }}</p>
                                 <p>{{ review.rating_number }}</p>
+                                <p class="customerName">{{ review.name }}</p>
+                                <small>{{ review.created_on }}</small>
 
                             </div>
                             <p class="reviewText">{{ review.comment }}</p>
@@ -87,18 +88,16 @@
                             </div>
                             <div class="reviewBox2child">
                                 <label>Rate Our Service</label>
-                                <form>
-                                  <select name="hotels" id="hotel rating" class="rating-selector">
-                                    <option value="one">  1 Star</option>
-                                    <option value="two">  2 Star</option>
-                                    <option value="three">3 Star</option>
-                                    <option value="four"> 4 Star</option>
-                                    <option value="five"> 5 Star</option>
+                                  <select name="rating_number" id="hotel rating" class="rating-selector">
+                                    <option value="1">  1 Star</option>
+                                    <option value="2">  2 Star</option>
+                                    <option value="3">3 Star</option>
+                                    <option value="4"> 4 Star</option>
+                                    <option value="5"> 5 Star</option>
                                   </select>
-                                </form>
                             </div>
                             <div class="rating-button-holder">
-                                <input type="submit" class="rating-submitter">
+                               <input type="submit" class="rating-submitter">
                             </div>
                         </form>
                     </div>

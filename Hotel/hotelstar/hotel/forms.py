@@ -1,5 +1,5 @@
 from django import forms
-from .models import Test, HotelReview
+from .models import Test, HotelReview, Contact
 
 class TestForm(forms.ModelForm):
     class Meta:
@@ -17,3 +17,9 @@ class HotelReviewForm(forms.ModelForm):
         #     'comment': forms.Textarea(attrs={'class': 'form-control'}),
         #     'rating_number': forms.Select(attrs={'class': 'form-control'})
         # }
+
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = ('name', 'email', 'message')
