@@ -59,16 +59,25 @@
                         <div class="reviewBox1Child">
                             <div class="nameHolder">
                                 <img src="{{ review.picture.url }}" class="customerPic" alt="Customer Picture">
-                                <p>{{ review.rating_number }}</p>
                                 <p class="customerName">{{ review.name }}</p>
-                                <small>{{ review.created_on }}</small>
-
+                                <div class="reviewStars">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                </div>
+                                <p class="reviewRating">{{ review.rating_number }}</p>
                             </div>
-                            <p class="reviewText">{{ review.comment }}</p>
+                            <div class="reviewText">
+                                <p>{{ review.comment }}</p>
+                            </div>
                         </div>
                         {% endfor %}
-                        <form>
-                            <a href="#"> <input class="see-more see-rev" type="button" value="All reviews"></a>
+                        <form class="allReviewsButton">
+                            <a href="#">
+                                <input class="rating-submitter" type="button" value="All reviews">
+                            </a>
                         </form>
                     </div>
                     <div class="reviewBox2">

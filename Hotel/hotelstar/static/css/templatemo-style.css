@@ -84,7 +84,7 @@ align-items: center;
 }
 .se-review {
 font-size:20px;
-
+text-align: center;
 }
 .see-more {
 outline: none;
@@ -189,15 +189,15 @@ border-radius:10%;
   color: #666768;
 }
 
-.navbar-light .navbar-nav .nav-item.green-highlight.active > .nav-link, 
-.navbar-light .navbar-nav .nav-item.green-highlight .nav-link.active, 
-.navbar-light .navbar-nav .nav-item.green-highlight .nav-link.show, 
+.navbar-light .navbar-nav .nav-item.green-highlight.active > .nav-link,
+.navbar-light .navbar-nav .nav-item.green-highlight .nav-link.active,
+.navbar-light .navbar-nav .nav-item.green-highlight .nav-link.show,
 .navbar-light .navbar-nav .nav-item.green-highlight .show > .nav-link {
   color: #006868;
 }
 
 .nav-item {
-  position: relative;  
+  position: relative;
 }
 
 .nav-link {
@@ -294,8 +294,8 @@ border-radius:10%;
 .btn-primary:hover,
 .btn-primary:focus,
 .btn-primary:active,
-.btn-primary:not(:disabled):not(.disabled).active, 
-.btn-primary:not(:disabled):not(.disabled):active, 
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
 .show>.btn-primary.dropdown-toggle {
   background-color: #495057;
   outline: none;
@@ -420,7 +420,7 @@ border-radius:10%;
 .reviewBox1 {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 375px;
   max-width: 361.6px;
   width: 100%;
@@ -428,11 +428,12 @@ border-radius:10%;
 .reviewBox1Child {
   max-width: 361.6px;
   width: 100%;
-  height: 100px;
+  height: 130px;
 }
 .nameHolder {
   display: flex;
   flex-direction: row;
+  vertical-align: middle;
 }
 .iconsize {
   font-size: 20px;
@@ -440,7 +441,10 @@ border-radius:10%;
 .reviewText {
   font-size: 16px;
   color: #666768;
-  font-family: italic;
+  font-family: poppins;
+}
+.reviewStars {
+  padding: 6px 0px 0px 10px;
 }
 .customerPic {
   width: 50px;
@@ -448,9 +452,23 @@ border-radius:10%;
   border-radius: 40px;
 }
 .customerName {
-  padding: 6px 0px 0px 10px;
   color: #666768;
-  font-family: italic;
+  font-family: poppins;
+  padding: 6px 0px 0px 10px;
+  font-size: 16px;
+}
+.reviewDate {
+  font-size: 16px;
+  font-family: poppins;
+}
+.reviewRating {
+  font-size: 16px;
+  font-family: poppins;
+  padding: 6px 0px 0px 10px;
+}
+.allReviewsButton {
+  width: 361px;
+  text-align: center;
 }
 .reviewBox2 {
   max-width: 361.6px;
@@ -605,7 +623,7 @@ padding-right: 10px;
   width: 100%;
   height: 600px;
   background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -616,44 +634,17 @@ max-width: 330px;
 width: 100%;
 height: 50px;
 outline: none;
-border-radius: 25px;
-border: none;
 }
 .te-checkbox {
 display: flex;
-justify-content: space-between;
-align-items: center;
-}
-.te-checkbox child {
-    align-items center;
-}
-.te-checkbox {
-
-}
-.second {
-padding: 5px 35px;
-box-shadow: 1px 1px 20px;
-border-radius: 10px;
-}
-.h2-star {
-font-size: 18px;
-}
-.h2-div {
-width: 100%;
-padding: 0 10px;
-}
-.ext {
-padding-top: 7px;
 }
 .chch {
-width: 25px;
+width: 35px;
+padding-top: 4px;
 }
 .chch input {
-width: 25px;
-height: 25px;
-}
-.label {
-margin-left: 10px;
+width: 20px;
+height: 20px;
 }
 .search {
  max-width: 330px;
@@ -661,10 +652,10 @@ margin-left: 10px;
  display: flex;
  flex-direction: column;
  justify-content: center;
- margin-bottom: 40px;
+ padding: 15px 0px;
 }
 .search h2 {
-font-size: 18px;
+font-size: 16px;
 }
 .search input {
 text-align: center;

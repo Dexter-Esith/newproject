@@ -113,7 +113,7 @@ def single_test(request, id):
 
 def see_more(request, id):
     seemore = Hotel.objects.get(id=id)
-    reviews = HotelReview.objects.filter(review=id, permission=True)[:3]
+    reviews = HotelReview.objects.filter(review=id, permission=True)[:2]
 
     form = HotelReviewForm()
     if request.method == "GET":
