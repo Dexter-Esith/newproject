@@ -96,6 +96,7 @@ height: 40px;
 margin-top:20px;
 transition:0.6s;
 border-radius: 5px;
+cursor: pointer;
 }
 
 .title {
@@ -402,6 +403,7 @@ border-radius:10%;
   color: #666768;
   font-size: 24px;
 }
+
 .fac {
   font-size: 20px;
   padding: 5px 0px;

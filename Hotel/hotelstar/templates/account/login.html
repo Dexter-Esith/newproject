@@ -1,4 +1,4 @@
-{% extends "account/base.html" %}
+{% extends "hotel/base.html" %}
 
 {% load i18n %}
 {% load account socialaccount %}
@@ -6,8 +6,8 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-
-<h1>{% trans "Sign In" %}</h1>
+<div class="tm-bg-white-transparent tm-feature-box" style="margin-top: 60px">
+<h1 style="text-align: center">{% trans "Sign In" %}</h1>
 
 {% get_providers as socialaccount_providers %}
 
@@ -42,5 +42,5 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
 </form>
-
+</div>
 {% endblock %}
